@@ -1,9 +1,16 @@
-import React        from 'react';
-import { Link }     from 'react-router';
-
+import React        from 'react'
+import { Link }     from 'react-router'
+import Trie         from '../../Trie'
 import './MainPage.scss'
 
 export default class MainPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      trie: new Trie()
+    }
+  }
+
   render() {
     return (
       <div class='main-page'>
