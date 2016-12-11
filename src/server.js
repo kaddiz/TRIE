@@ -3,13 +3,10 @@ import React                    from 'react';
 import ReactDom                 from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes                   from './routes';
-import { Provider }             from 'react-redux';
-import configureStore           from './redux/configureStore';
 
 const app = express();
 
 app.use((req, res) => {
-  const store = configureStore();
 
   match({ routes, location: req.url },
     (error, redirectLocation, renderProps) => {
@@ -24,9 +21,7 @@ app.use((req, res) => {
       }
 
       const componentHTML = ReactDom.renderToString(
-        <Provider store={store}>
           <RouterContext {...renderProps} />
-        </Provider>
       );
 
       return res.end(renderHTML(componentHTML));
@@ -43,7 +38,7 @@ function renderHTML(componentHTML) {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MrrrChat</title>
+        <title>TRIE</title>
         <link rel="stylesheet" href="${assetUrl}/bundle.css">
       </head>
       <body>

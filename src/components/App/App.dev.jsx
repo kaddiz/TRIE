@@ -1,6 +1,5 @@
-import React, { Component, PropTypes } from 'react';
-import AppProd from './App.prod';
-import DevTools from '../DevTools';
+import React, { Component, PropTypes } from 'react'
+import AppProd from './App.prod'
 
 export default class App extends Component {
   static propTypes = {
@@ -10,10 +9,8 @@ export default class App extends Component {
   render() {
     return (
       <AppProd>
-        <div>
           {this.props.children}
-          <DevTools />
-        </div>
+
       </AppProd>
     );
   }

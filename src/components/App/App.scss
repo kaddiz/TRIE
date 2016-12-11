@@ -6,6 +6,12 @@
 
 body {
   font: 16px/1.5 'Lato', sans-serif;
+
+  background-color: rgb(255, 255, 255);
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-image: url("http://pattern4site.ru/images/pattern/_rebig/5-fon-dlya-sayta.jpg");
+  background-position: left top;
 }
 
 .link, .link:hover, .link:focus {
